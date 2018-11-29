@@ -1,0 +1,13 @@
+[TOC]
+
+# 准备
+
+初级：![img](file:///C:\Users\fatcat\AppData\Local\Temp\8LDO48C$8@[GWU0353$FOVS.png)https://www.nowcoder.com/courses/semester/2018algorithm-base
+进阶：![img](file:///C:\Users\fatcat\AppData\Local\Temp\8LDO48C$8@[GWU0353$FOVS.png)https://www.nowcoder.com/courses/semester/2018algorithm-higher
+
+# 第一章
+
+- 时间复杂度：
+  - 常数时间的操作：一个操作如果和数据量没有关系，每次都是固定时间内完成的操作，叫做常数操作。
+  - 时间复杂度为一个算法流程中，常数操作数量的指标。常用O(读作big O)来表示。具体来说，在常数操作数量的表达式中，只要高阶项，不要低阶项，也不要高阶项的系数，剩下的部分如果记为f(N),那么时间复杂度为O(f(N))。
+  - 评价一个算法流程的好坏，先看时间复杂度的指标，然后再分析不同数据样本下的实际运行时间，也就是常数项时间。
