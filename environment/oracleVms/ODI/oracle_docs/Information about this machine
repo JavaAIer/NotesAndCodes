@@ -1,0 +1,31 @@
+Host Name - ODIGettingStarted (this has been added to the /etc/hosts file for the local loopback (127.0.0.1)
+
+Products Installed on VM:
+	- JDK 1.8_60
+	- Oracle Data Integrator 12c (12.2.1.1.0)
+	- Oracle EE (11.2.0.4)
+	- Oracle GoldenGate 12c (12.1.2.0.0)
+
+Operating System Autologon at startup user-id / password - oracle/oracle
+Root user-id / password - root/oracle
+All passwords set to oracle
+ODI username and passwords: SUPERVISOR/SUPERVISOR
+
+User Profile Startup File - /home/oracle/.bash_profile
+
+Java Installation - /usr/java/
+
+ODI Home - /u01/Middleware/ODI12c
+
+OGG Source Home - /u01/Middleware/OGG_Source
+OGG Source Manager Port: 7010
+OGG Source JAgent and Monitor Passwords: oracle
+
+OGG Target Home - /u01/Middleware/OGG_Target
+OGG Target Manager Port: 7020
+OGG Target JAgent and Monitor Passwords: oracle
+
+mounting shared memory - This was used for hardware which could only provide 2GB ram to the VM.  However, it will cause initial shared memory issues for Oracle DB which will cause it to not autostart.  Start the Oracle database manually.
+
+mount -t tmpfs shmfs -o size=2g /dev/shm
+
