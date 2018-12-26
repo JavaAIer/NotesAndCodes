@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: chapter-03-03
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: fatcat
+Implementation-Vendor-Id: cloudskyme
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/chapter-03-03
+Created-By: Maven Integration for Eclipse
+

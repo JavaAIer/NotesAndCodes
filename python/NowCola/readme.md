@@ -39,8 +39,8 @@
 - [13 日期和时间的处理](13/DateTimeCalendar.md)
 - [14 文件操作](14/File.md)
 - [15 JSON数据格式](15/Json.md)
-- [16 异常处理]()
-- [17 答题小游戏]()
+- [16 异常处理](16/Exception.md)
+- [17 答题小游戏](17/IntergratedExercises.md)
 
 
 

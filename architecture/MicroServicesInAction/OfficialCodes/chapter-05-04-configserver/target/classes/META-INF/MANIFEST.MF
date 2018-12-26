@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: chapter-05-04-configserver
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: fatcat
+Implementation-Vendor-Id: cloudskyme
+Build-Jdk: 1.8.0_181
+Implementation-URL: http://projects.spring.io/spring-boot/chapter-05-0
+ 4-configserver/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
