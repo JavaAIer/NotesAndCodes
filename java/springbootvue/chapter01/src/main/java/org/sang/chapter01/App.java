@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @create: 2019年3月20日
  *
  */
-//@SpringBootApplication = @EnableAutoConfiguration + @ComponentScan
+// @SpringBootApplication = @EnableAutoConfiguration + @ComponentScan
 @SpringBootApplication
 public class App {
 	public static void main(String[] args) {

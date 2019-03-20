@@ -1,7 +1,7 @@
 package org.sang.chapter02noparent;
 
-
-
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @program: chapter02noparent
