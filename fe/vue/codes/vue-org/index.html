@@ -1,0 +1,56 @@
+<div id="app">
+    <h2>{{product}} are in stock.</h2>
+    <ul>
+        <li v-for="item in items">
+            {{item}}
+        </li>
+    </ul>
+
+    <ul>
+        <li v-for="prod in products">
+            <input type="number" v-model.number="prod.quantity" />
+            {{prod.name}}
+            <span v-if="prod.quantity===0">
+                - OUT OF STOCK
+            </span>
+            <button @click="prod.quantity+=1">
+                Add
+            </button>
+        </li>
+    </ul>
+    <h2>Total Inventory:{{totalProducts}}</h2>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            product: "Clothes",
+            items: [
+                "Boots",
+                "Jacket",
+                "Hiking Socks"
+            ],
+            products: [
+                // "Boots",
+                // "Jacket",
+                // "Hiking Socks"
+            ]
+        },
+        computed: {
+            totalProducts() {
+                return this.products.reduce((sum, prod) => {
+                    return sum + prod.quantity;
+                }, 0);
+            }
+        },
+        created() {
+            fetch("https://api.myjson.com/bins/74l63")
+                .then(response => response.json())
+                .then(json => {
+                    this.products = json.products
+                })
+        }
+    });
+</script>
