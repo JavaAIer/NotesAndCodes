@@ -1,7 +1,6 @@
 package org.sang.chapter02yml01.config.model;
 
-import java.util.List;
-
+import java.util.Arrays;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
@@ -14,65 +13,42 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-@ConfigurationProperties()
-@PropertySource(value="classpath:my.yml")
+@ConfigurationProperties(prefix = "my")
+@PropertySource(value = "classpath:application.yml", encoding = "utf-8")
 public class MyModel {
-	private String name;
-	private String address;
-	private List<String> favorites;
-	
-	
+
 	@Override
 	public String toString() {
-		return "MyModel [name=" + name + ", address=" + address + ", favorites=" + favorites + "]";
+		return "MyModel [myname=" + myname + ", myaddress=" + myaddress + ", myfavorites="
+				+ Arrays.toString(myfavorites) + "]";
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
+
+	private String myname;
+	private String myaddress;
+	private String[] myfavorites = {};
+
+	public String getMyname() {
+		return myname;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		MyModel other = (MyModel) obj;
-		if (address == null) {
-			if (other.address != null)
-				return false;
-		} else if (!address.equals(other.address))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
+
+	public void setMyname(String myname) {
+		this.myname = myname;
 	}
-	public String getName() {
-		return name;
+
+	public String getMyaddress() {
+		return myaddress;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setMyaddress(String myaddress) {
+		this.myaddress = myaddress;
 	}
-	public String getAddress() {
-		return address;
+
+	public String[] getMyfavorites() {
+		return myfavorites;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+
+	public void setMyfavorites(String[] myfavorites) {
+		this.myfavorites = myfavorites;
 	}
-	public List<String> getFavorites() {
-		return favorites;
-	}
-	public void setFavorites(List<String> favorites) {
-		this.favorites = favorites;
-	}
-	
-	
+
 }

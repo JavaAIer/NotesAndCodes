@@ -1,7 +1,9 @@
 package org.sang.chapter02jetty;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @program: chapter02jetty
@@ -11,6 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication
+@EnableAutoConfiguration
+@ComponentScan
 public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);

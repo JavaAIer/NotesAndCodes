@@ -1,28 +1,29 @@
 package org.sang.chapter02yml01.config.model;
 
-import java.util.List;
-
+import java.util.Arrays;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties()
-@PropertySource(value="classpath:users.yml")
+@ConfigurationProperties(prefix="list")
+@PropertySource(value = "classpath:application.yml", encoding = "utf-8")
 public class UsersModel {
-	private List<MyModel> users;
+	private UserModel[] users= {};
 
-	public List<MyModel> getUsers() {
+	public UserModel[]  getUsers() {
 		return users;
 	}
 
-	public void setUsers(List<MyModel> users) {
+	public void setUsers(UserModel[]  users) {
 		this.users = users;
 	}
 
 	@Override
 	public String toString() {
-		return "UsersModel [users=" + users + "]";
+		return "UsersModel [users=" + Arrays.toString(users)   + "]";
 	}
 
 }
+
+

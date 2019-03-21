@@ -1,0 +1,21 @@
+server:
+    port: 8080
+my:
+    myname: 于谦
+    myaddress: 德云社
+    myfavorites: 
+        - 喝酒
+        - 烫头
+        - 说相声
+list:
+    users:
+        - name: 于谦
+          address: 德云社
+          favorites: 
+              - 喝酒
+              - 烫头
+              - 说相声
+        - name: 郭德纲
+          address: 德云社
+          favorites: 
+              - 说相声
