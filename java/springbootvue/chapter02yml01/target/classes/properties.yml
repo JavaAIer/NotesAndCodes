@@ -1,0 +1,6 @@
+server:
+	port:80
+	servlet:
+		context-path:/chapter02
+	tomcat:
+		uri-encoding:utf-8

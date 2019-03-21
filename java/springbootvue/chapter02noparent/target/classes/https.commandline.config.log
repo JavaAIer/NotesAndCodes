@@ -1,0 +1,24 @@
+C:\WINDOWS\system32>keytool -genkey -alias tomcathttps -keyalg RSA -keysize 2048 -keystore sang.p12 -validity 365
+输入密钥库口令:
+再次输入新口令:
+您的名字与姓氏是什么?
+  [Unknown]:  Java
+您的组织单位名称是什么?
+  [Unknown]:  JavaAIer
+您的组织名称是什么?
+  [Unknown]:  JavaAIer
+您所在的城市或区域名称是什么?
+  [Unknown]:  Changsha
+您所在的省/市/自治区名称是什么?
+  [Unknown]:  Hunan
+该单位的双字母国家/地区代码是什么?
+  [Unknown]:  China
+CN=Java, OU=JavaAIer, O=JavaAIer, L=Changsha, ST=Hunan, C=China是否正确?
+  [否]:  Y
+
+输入 <tomcathttps> 的密钥口令
+        (如果和密钥库口令相同, 按回车):
+再次输入新口令:
+
+Warning:
+JKS 密钥库使用专用格式。建议使用 "keytool -importkeystore -srckeystore sang.p12 -destkeystore sang.p12 -deststoretype pkcs12" 迁移到行业标准格式 PKCS12。
