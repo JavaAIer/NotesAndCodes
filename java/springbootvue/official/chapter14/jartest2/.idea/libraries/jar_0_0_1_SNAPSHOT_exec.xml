@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jar-0.0.1-SNAPSHOT-exec">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jar-0.0.1-SNAPSHOT-exec.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
