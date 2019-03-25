@@ -3,14 +3,14 @@ package org.sang.c04jackson.controller;
 import java.util.Date;
 
 import org.sang.c04jackson.model.BookModel;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+//@Controller+@ResponseBody = @RestController
 public class BookController {
 	@GetMapping("/books")
-	@ResponseBody
+	//@ResponseBody
 	public BookModel books() {
 		BookModel b1 = new BookModel();
 		b1.setId(1);
