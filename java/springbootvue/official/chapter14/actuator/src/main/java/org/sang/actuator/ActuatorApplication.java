@@ -5,6 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
+/**
+ * @program: actuator
+ * @description: 描述一下这个类或接口的作用
+ * @author: JavaAIer
+ * @create: 2019年3月27日
+ *
+ */
 @SpringBootApplication
 @EnableScheduling
 public class ActuatorApplication {
