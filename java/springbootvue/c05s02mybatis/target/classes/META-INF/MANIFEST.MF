@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: c05s02mybatis
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: 28137
+Implementation-Vendor-Id: org.sang
+Build-Jdk: 1.8.0_181
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+
