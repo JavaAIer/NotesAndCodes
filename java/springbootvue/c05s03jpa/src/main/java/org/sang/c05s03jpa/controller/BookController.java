@@ -18,7 +18,7 @@ public class BookController {
     @Autowired
     BookService bookService;
     @GetMapping("/findAll")
-    public void findAll() {
+    public Page<Book> findAll() {
         PageRequest pageable = PageRequest.of(2, 3);
         Page<Book> page = bookService.getBookByPage(pageable);
         System.out.println("总页数:"+page.getTotalPages());
@@ -27,9 +27,10 @@ public class BookController {
         System.out.println("当前页数:"+(page.getNumber()+1));
         System.out.println("当前页记录数:"+page.getNumberOfElements());
         System.out.println("每页记录数:"+page.getSize());
+        return page;
     }
     @GetMapping("/search")
-    public void search() {
+    public Book search() {
         List<Book> bs1 = bookService.getBookByIdAndAuthor("鲁迅", 7);
         List<Book> bs2 = bookService.getBooksByAuthorStartingWith("吴");
         List<Book> bs3 = bookService.getBooksByIdAndName("西", 8);
@@ -40,13 +41,15 @@ public class BookController {
         System.out.println("bs3:"+bs3);
         System.out.println("bs4:"+bs4);
         System.out.println("b:"+b);
+        return b;
     }
     @GetMapping("/save")
-    public void save() {
+    public Book save() {
         Book book = new Book();
         book.setAuthor("鲁迅");
         book.setName("呐喊");
         book.setPrice(23F);
         bookService.addBook(book);
+        return book;
     }
 }
