@@ -23,6 +23,10 @@ mysql  [Docker 上安装、启动 MySQL （图解）](https://blog.csdn.net/jian
  # mkdir -p ~/mysql/data ~/mysql/logs ~/mysql/conf
  # docker run -p 3306:3306 --name mysql -v $PWD/mysql/conf/my.cnf:/etc/mysql/my.cnf -v $PWD/mysql/logs:/logs -v $PWD/mysql/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456   -d mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
  
+ docker exec -it mysql bash
+ 
+
+ 
 
 ```
 
