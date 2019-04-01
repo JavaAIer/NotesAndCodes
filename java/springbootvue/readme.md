@@ -30,3 +30,13 @@ mysql  [Docker 上安装、启动 MySQL （图解）](https://blog.csdn.net/jian
 
 ```
 
+redis 
+
+```bash
+docker pull redis
+#docker run -d -p 6379:6379 --name redis redis
+docker run --name redis -p 6379:6379 -d redis --requirepass "123@456"
+
+docker exec -it redis bash
+```
+
