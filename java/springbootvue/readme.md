@@ -40,3 +40,9 @@ docker run --name redis -p 6379:6379 -d redis --requirepass "123@456"
 docker exec -it redis bash
 ```
 
+redis 集群
+
+``` bash
+
+```
+
