@@ -28,6 +28,7 @@ make install
 #配置Redis能随系统启动:
 ./utils/install_server.sh
 # 关闭redis 
+# redis-cli -p 端口号 shutdown
 redis-cli shutdown
 #启动Redis数据库服务器（redis解压目录下）：
 $ cd src
@@ -177,11 +178,25 @@ redis.conf 的配置信息
 Redis设置密码访问：
 
 vim /usr/local/redis/etc/redis.conf
-# requirepass foobared
+
+requirepass foobared
 
 修改为：
 
 requirepass xxxxxxx（连接密码）
 
 重启Redis
---------------------- 
+
+## redis-cli工具使用
+
+``` bash
+# 连接redis redis-cli -h IPAddress -p Port
+redis-cli -h 192.168.0.159 -p 8005
+# 关闭redis
+redis-cli -p 6379 shutdown
+
+
+```
+
+
+

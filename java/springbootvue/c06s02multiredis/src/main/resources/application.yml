@@ -10,9 +10,9 @@ spring:
         - 8006
         - 8007
         - 8008
-      host:www.springbootvuestudy.comcomcom
+      host: www.springbootvuestudy.comcomcom
       poolConfig:
-        max-total:8
-        max-idle:8
-        max-wait-millis:1
-        min-idle:0
+        max-total: 8
+        max-idle: 8
+        max-wait-millis: 1
+        min-idle: 0
