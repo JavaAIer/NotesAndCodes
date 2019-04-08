@@ -64,3 +64,11 @@ redis-server /usr/local/redisCluster/8005/redis.conf
 redis-server /usr/local/redisCluster/8006/redis.conf 
 ```
 
+``` bash
+cd /usr/local/redisCluster/
+vim /usr/local/redisCluster/redis-trib.rb
+
+```
+
+# [redis cluster 设置密码做集群时gem下client.rb文件修改](https://www.cnblogs.com/shihaiming/p/5949772.html)
+
