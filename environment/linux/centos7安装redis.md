@@ -31,8 +31,8 @@ make install
 # redis-cli -p 端口号 shutdown
 redis-cli shutdown
 #启动Redis数据库服务器（redis解压目录下）：
-$ cd src
-$ ./redis-server & （&表示可在后台运行，ctrl+c）
+cd src
+./redis-server & （&表示可在后台运行，ctrl+c）
 # 开机启动redis
 	# 1 mkdir  /usr/local/redis/redis-stable
 mkdir /usr/local/redis/redis-stable/bin     #执行目录
