@@ -21,6 +21,8 @@ vi /etc/profile
 export CATALINA_HOME=/usr/local/tomcat/tomcat_8080
 export PATH=$TOMCAT_HOME/bin:$PATH
 
+
+source /etc/profile
 # 防火墙
 
 #关闭防火墙
