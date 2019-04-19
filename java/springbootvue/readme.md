@@ -20,7 +20,7 @@
 ```bash
  docker search mysql
  docker pull mysql
- docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456  -d mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 
+ docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456  -d mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci  --lower_case_table_names=1
  # mkdir -p ~/mysql/data ~/mysql/logs ~/mysql/conf
  # docker run -p 3306:3306 --name mysql -v $PWD/mysql/conf/my.cnf:/etc/mysql/my.cnf -v $PWD/mysql/logs:/logs -v $PWD/mysql/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456   -d mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
  
