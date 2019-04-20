@@ -8,16 +8,24 @@ startx
 
 #修改系统的运行级别，以便于开机自动进入图形界面。 
 ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
+
+# 关闭图形界面
+ systemctl get-default
+ systemctl set-default multi-user.target
+
+
+```
+
+
+
 #--------------------- 
 #作者：Lubin的编程技术专栏 
 #来源：CSDN 
 #原文：https://blog.csdn.net/bingbingtea/article/details/79553669 
 #版权声明：本文为博主原创文章，转载请附上博文链接！
-```
 
 
 
-# 
+[Linux学习—centos7设置开机非图形化  ](<https://blog.51cto.com/13570193/2071010>)
 
 
-  
