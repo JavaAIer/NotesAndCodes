@@ -2,6 +2,27 @@
 
 最近组了一个小主机+向日葵路由器来实现外网文件系统，为防止家里nas意外断电（可用性有99.9999%，也还是怕万一），如果断网就关机，防止ups电耗光将磁盘损坏（同理，怕万一）。
 
+### 流程图
+
+``` mermaid
+graph LR
+A((开始))-->B[休息十秒];
+B-->C{连百度};
+C-->|能连上|G[跳出判断];
+G-->B;
+C-->|不能连上|D{连阿里};
+D-->|能连上|G[跳出判断];
+D-->|不能连上|E[连腾讯];
+E-->|能连上|G[跳出判断];
+E-->|不能连上|F[关机];
+F-->H((程序结束))
+
+```
+
+![](./shutdownflowchart.png)
+
+### 代码运行效果
+
 > sudo java -jar -Dspring.config.location=application.properties poweroffwhenoffline.jar
 
 ![](./centosAutoPowerOffWhenOffLine.png)
