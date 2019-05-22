@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //定义generator方法
+        function*  hello(){
+            yield "hello";
+            yield "world";
+            yield "abd";
+            return "qq";
+        }
+
+
+
+        let h =hello();
+        console.log(h);
+      /*  console.log(h.next());
+        console.log(h.next());
+        console.log(h.next());
+        console.log(h.next());
+        console.log(h.next());*/
+
+      for(let v of h ){
+          console.log(v);
+      }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -49,11 +49,57 @@
          console.log(x1);
          */
 
-        const person = {name: "jack", age: 21, language: ['java', 'js', 'css']};
+        /*        const person = {name: "jack", age: 21, language: ['java', 'js', 'css']};
 
-        let {name,age,language}=person;
-        console.log(name,age,language);
+                let {name,age,language}=person;
+                console.log(name,age,language);*/
 
+        class User {
+            //构造函数
+            constructor(name, age = 20) {
+                this.name = name;
+                this.age = age;
+            }
+
+            sayHello() {
+                //  console.log("Hello");
+                return "hello," + this.name;
+            }
+
+            //静态函数
+            static isAdult(age) {
+                if (age >= 18) {
+                    return "成年人";
+                } else {
+                    return "未成年人";
+                }
+            }
+        }
+
+        let user = new User("张三", 10);
+        let user2 = new User("李四");
+
+        console.log(user);
+        console.log(user.sayHello());
+        console.log(user2);
+        //静态方法的使用
+        console.log(User.isAdult(user.age));
+
+        class Lisi extends User {
+            constructor() {
+                super("李四", 30);
+            }
+
+            test() {
+                return "test -> " + this.name;
+            }
+        }
+
+        let lisi = new Lisi();
+        console.log(lisi);
+        console.log(lisi.test());
+        console.log(lisi.sayHello());
+        console.log(Lisi.isAdult(lisi.age));
     </script>
 </head>
 <body>

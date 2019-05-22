@@ -1,7 +1,9 @@
-package org.sang.security01;
+package org.sang.securityjson;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.fasterxml.jackson.annotation.JsonView;
+import org.springframework.web.bind.annotation.*;
+
+import javax.swing.text.View;
 
 @RestController
 public class HelloController {
@@ -24,4 +26,5 @@ public class HelloController {
     public String dba() {
         return "hello dba";
     }
+
 }
