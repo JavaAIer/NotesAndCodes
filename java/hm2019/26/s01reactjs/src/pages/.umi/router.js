@@ -13,9 +13,19 @@ let routes = [
     "component": require('../HelloWorld.js').default
   },
   {
+    "path": "/layouts",
+    "exact": true,
+    "component": require('../layouts/index.js').default
+  },
+  {
     "path": "/List",
     "exact": true,
     "component": require('../List.js').default
+  },
+  {
+    "path": "/MyTabs",
+    "exact": true,
+    "component": require('../MyTabs.js').default
   },
   {
     "path": "/Show",

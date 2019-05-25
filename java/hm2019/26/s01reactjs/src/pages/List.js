@@ -4,11 +4,22 @@ import {connect} from 'dva';
 const namespace = "list";
 
 @connect((state) => {
-    return {
-        dataList: state [namespace].data,
-        maxNum: state[namespace].maxNum
+        return {
+            dataList: state [namespace].data,
+            maxNum: state[namespace].maxNum
+        }
+    }, (dispatch) => {
+        return {
+            add: function () {
+                dispatch({
+                    //通过dispatch调用model中定义的函数，通过type属性，指定函数名，格式：namespace/函数名
+                    type: namespace + "/addNewData"
+                });
+            }
+        }
     }
-})
+)
+
 class List extends React.Component {
     constructor(props) {
         super(props);
@@ -36,13 +47,14 @@ class List extends React.Component {
                 </ul>
                 <button onClick={() => {
 
-                    let newArr = [...this.state.dataList, this.state.dataList.length + 1];
+                    this.props.add();
+                    /*  let newArr = [...this.state.dataList, this.state.dataList.length + 1];
 
-                    this.setState(
-                        {
-                            dataList: newArr
-                        }
-                    )
+                      this.setState(
+                          {
+                              dataList: newArr
+                          }
+                      )*/
                 }}>加1
                 </button>
             </div>
