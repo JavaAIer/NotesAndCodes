@@ -1,5 +1,6 @@
 package org.sang.security.globalmethod;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-    @Bean
+    @Autowired
     MethodService methodService;
 
 
@@ -22,11 +23,22 @@ public class HomeController {
     }
 
     @GetMapping("/dba/hello")
-    public String admin() {
+    public String dba() {
         return methodService.dba();
     }
 
+    @GetMapping("/methodadmin")
     public String SeeAdminMethod(){
-        return
+        return methodService.admin();
+    }
+
+    @GetMapping("/methoddba")
+    public String SeeDbaMethod(){
+        return methodService.dba();
+    }
+
+    @GetMapping("/methoduser")
+    public String SeeUserMethod(){
+        return methodService.user();
     }
 }
