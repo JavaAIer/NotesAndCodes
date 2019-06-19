@@ -90,3 +90,4 @@ typings/
 # dotenv environment variables file
 .env
 # =================================以上为nodejs的忽略项==============================
+/java/hm2019/26/s01reactjs/node_modules
