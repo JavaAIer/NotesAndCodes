@@ -15,3 +15,4 @@ app.use(createLoading());
 });
 
 app.model({ namespace: 'ListData', ...(require('C:/workspace/NotesAndCodes/java/hm2019/26/s01reactjs/src/models/ListData.js').default) });
+app.model({ namespace: 'UserListData', ...(require('C:/workspace/NotesAndCodes/java/hm2019/26/s01reactjs/src/models/UserListData.js').default) });
