@@ -25,6 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * dba 是荣耀王者，这是极少失手的人才能拥有的权限
      *      admin 是钻石，有一定经验的人可以分这个权限
      *          user 是青铜，能排位的都有这权限
+     *
      * @return
      */
     @Bean
@@ -32,6 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         RoleHierarchyImpl roleHierarchy = new RoleHierarchyImpl();
         String hierarchy = "ROLE_dba > ROLE_admin ROLE_admin > ROLE_user";
         roleHierarchy.setHierarchy(hierarchy);
+        //System.out.println(roleHierarchy);
         return roleHierarchy;
     }
 
