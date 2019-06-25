@@ -37,6 +37,7 @@ public class ShiroConfig {
      * "logout"是一个注销登录请求,其余请求则都需要认证后才能访问
      * @return
      */
+
     @Bean
     public ShiroFilterChainDefinition shiroFilterChainDefinition() {
         DefaultShiroFilterChainDefinition chainDefinition =
@@ -44,7 +45,7 @@ public class ShiroConfig {
         chainDefinition.addPathDefinition("/login", "anon");
         chainDefinition.addPathDefinition("/doLogin", "anon");
         chainDefinition.addPathDefinition("/logout", "logout");
-        chainDefinition.addPathDefinition("/**", "authe");
+        chainDefinition.addPathDefinition("/**", "authc");
         return chainDefinition;
     }
 
