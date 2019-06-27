@@ -5,11 +5,14 @@
 ```bash
 mkdir /usr/local/tomcat
 cd /usr/local/tomcat
-wget http://mirrors.shu.edu.cn/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.19.tar.gz
+wget http://mirrors.shu.edu.cn/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz
+tar -zxvf apache-tomcat-9.0.17.tar.gz
+mv apache-tomcat-9.0.17 tomcat_8080
+wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-9/v9.0.19/bin/apache-tomcat-9.0.19.tar.gz
 tar -zxvf apache-tomcat-9.0.19.tar.gz
 mv apache-tomcat-9.0.19 tomcat_8080
 cd tomcat_8080/bin
-vim setenv.sh
+vi setenv.sh
 chmod +x setenv.sh
 
 # 创建 tomcat 服务
@@ -46,7 +49,7 @@ systemctl restart tomcat
 
 ## setenv.sh
 
-```sh
+``` sh
 #add tomcat pid
 CATALINA_PID="$CATALINA_BASE/tomcat.pid"
 #add java opts
@@ -55,7 +58,7 @@ JAVA_OPTS="-server -XX:PermSize=256M -XX:MaxPermSize=1024m -Xms512M -Xmx1024M -X
 
 ## tomcat.service
 
-```properties
+``` properties
 [Unit]
 Description=Tomcat
 After=syslog.target network.target remote-fs.target nss-lookup.target
@@ -73,6 +76,7 @@ WantedBy=multi-user.target
 ## 修改端口
 
 ```bash
+
 cd /usr/local/tomcat/tomcat_8080/conf
 //输入指令打开文件
 vi server.xml
@@ -107,7 +111,7 @@ cd /usr/local/tomcat/tomcat_8080/webapps/manager/META-INF/
 vim /usr/local/tomcat/tomcat_8080/webapps/manager/META-INF/context.xml
 ```
 
-```xml
+``` xml
 <tomcat-users>
     <role rolename="manager"/>     
     <role rolename="admin"/> 
@@ -119,7 +123,7 @@ vim /usr/local/tomcat/tomcat_8080/webapps/manager/META-INF/context.xml
 
 ```
 
-```xml
+``` xml
 <Context antiResourceLocking="false" privileged="true" >
  <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
@@ -237,6 +241,7 @@ cd /usr/local/tomcat/tomcat_8080/bin 进入tomcat根目录
 
 ./startup.sh  开启tomcat
 
+
 6.修改端口,切换至Tomcat conf目录
 
 cd /usr/local/tomcat/tomcat_8080/conf
@@ -263,6 +268,7 @@ vi server.xml
                connectionTimeout="20000"
                redirectPort="8443" />
 之后按esc键，在按shift+：（左下角出现会出现“：”），然后输入wq保存退出。
+
 
 7.配置gui-manager项目部署方式，切换至Tomcat conf目录，输入vi tomcat-users.xml打开文件，按“i”进入编辑模式，拷贝以下代码放置</tomcat-users>标签之间(注意将password和username换成你自己的)
 
@@ -306,8 +312,8 @@ http://blog.csdn.net/zzpzheng/article/details/48864129
 http://blog.csdn.net/guochunyang/article/details/51820066
 http://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead
 
-## centos7 tomact9详情安装配置教程
-
+centos7 tomact9详情安装配置教程
+--------------------- 
 作者：taoziBug 
 来源：CSDN 
 原文：https://blog.csdn.net/taozibug/article/details/80269008 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 新特性</title>
+    <script>
+        /**
+         局部变量和常量
+         for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+         //console.log("循环外：" + i);
+         const str = "abc";
+         console.log(str);
+         str = "123";
+         console.log(str);*/
+
+        /**
+         //字符串增强
+         let str ="hello heima";
+
+         console.log(str,"中是否包含了heima",str.includes("heima"));
+         console.log(str,"中是否包含了baima",str.includes("baima"));
+
+         console.log(str,"中是否以hello开头",str.startsWith("hello"));
+         console.log(str,"中是否以heima开头",str.startsWith("heima"));
+
+         console.log(str,"中是否以hello结束",str.endsWith("hello"));
+         console.log(str,"中是否以heima结束",str.endsWith("heima"));
+         */
+
+        /**
+         //字符串模板
+         let  str2 = ` hello
+         123
+         abc
+         def `;
+         console.log(str2);*/
+
+        /**
+         //数组解构
+         let arr = [1, 2, 3];
+         console.log(arr[1]);
+
+         let [x,y,z]= arr;
+         console.log(x,y,z);
+
+         let [x1]=arr;
+         console.log(x1);
+         */
+
+        /*        const person = {name: "jack", age: 21, language: ['java', 'js', 'css']};
+
+                let {name,age,language}=person;
+                console.log(name,age,language);*/
+
+        class User {
+            //构造函数
+            constructor(name, age = 20) {
+                this.name = name;
+                this.age = age;
+            }
+
+            sayHello() {
+                //  console.log("Hello");
+                return "hello," + this.name;
+            }
+
+            //静态函数
+            static isAdult(age) {
+                if (age >= 18) {
+                    return "成年人";
+                } else {
+                    return "未成年人";
+                }
+            }
+        }
+
+        let user = new User("张三", 10);
+        let user2 = new User("李四");
+
+        console.log(user);
+        console.log(user.sayHello());
+        console.log(user2);
+        //静态方法的使用
+        console.log(User.isAdult(user.age));
+
+        class Lisi extends User {
+            constructor() {
+                super("李四", 30);
+            }
+
+            test() {
+                return "test -> " + this.name;
+            }
+        }
+
+        let lisi = new Lisi();
+        console.log(lisi);
+        console.log(lisi.test());
+        console.log(lisi.sayHello());
+        console.log(Lisi.isAdult(lisi.age));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    @T
+    class User {
+        constructor(name,age=20){
+            this.name=name;
+            this.age=age;
+        }
+    }
+
+
+    function T(target){
+        //target表示被修饰的对象
+
+        console.log(target);
+        target.country="中国";
+        target.sayHello(){
+            console.log(target.country);
+        }
+
+    }
+
+    console.log(User.country);
+
+</script>
+</body>
+</html>
