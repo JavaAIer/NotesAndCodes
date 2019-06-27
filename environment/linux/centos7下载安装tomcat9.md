@@ -5,6 +5,9 @@
 ```bash
 mkdir /usr/local/tomcat
 cd /usr/local/tomcat
+wget http://mirrors.shu.edu.cn/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz
+tar -zxvf apache-tomcat-9.0.17.tar.gz
+mv apache-tomcat-9.0.17 tomcat_8080
 wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-9/v9.0.19/bin/apache-tomcat-9.0.19.tar.gz
 tar -zxvf apache-tomcat-9.0.19.tar.gz
 mv apache-tomcat-9.0.19 tomcat_8080
