@@ -31,7 +31,7 @@ public class QuartzConfig {
         JobDetailFactoryBean bean = new JobDetailFactoryBean();
         bean.setJobClass(MySecondJob.class);
         JobDataMap jobDataMap = new JobDataMap();
-        jobDataMap.putAsString("name", "sang");
+        jobDataMap.put("name", "sang");
         bean.setJobDataMap(jobDataMap);
         bean.setDurability(true);
         return bean;
