@@ -36,7 +36,11 @@ docker run  -d -h mail.ewomail.com --restart=always \
   
 
 # WINDOWS 设置 要把下面的文件夹都建立好先
-docker run  -d -h www.testmail678.com --restart=always   -p 25:25   -p 109:109   -p 110:110   -p 143:143   -p 465:465   -p 587:587  -p 10024:10024  -p 993:993   -p 995:995    -p 8000:80   -p 8888:8080   -v /d/dockerfile/ewomail/mysql/:/ewomail/mysql/data/   -v /d/dockerfile/ewomail/vmail/:/ewomail/mail/   -v /d/dockerfile/ewomail/ssl/certs/:/etc/ssl/certs/   -v /d/dockerfile/ewomail/ssl/private/:/etc/ssl/private/   -v /d/dockerfile/ewomail/rainloop:/ewomail/www/rainloop/data   -v /d/dockerfile/ewomail/ssl/dkim/:/ewomail/dkim/   --name ewomail bestwu/ewomail
+docker run  -d -h www.testmail678.com --restart=always   -p 25:25   -p 109:109   -p 110:110   -p 143:143   -p 465:465   -p 587:587  -p 10024:10024  -p 993:993   -p 995:995    -p 80:80   -p 8080:8080   -v /d/dockerfile/ewomail/mysql/:/ewomail/mysql/data/   -v /d/dockerfile/ewomail/vmail/:/ewomail/mail/   -v /d/dockerfile/ewomail/ssl/certs/:/etc/ssl/certs/   -v /d/dockerfile/ewomail/ssl/private/:/etc/ssl/private/   -v /d/dockerfile/ewomail/rainloop:/ewomail/www/rainloop/data   -v /d/dockerfile/ewomail/ssl/dkim/:/ewomail/dkim/ -v /d/dockerfile/ewomail/etc/hosts:/etc/hosts  --name ewomail bestwu/ewomail
+
+
+# C盘
+docker run  -d -h www.testmail678.com --restart=always   -p 25:25   -p 109:109   -p 110:110   -p 143:143   -p 465:465   -p 587:587  -p 10024:10024  -p 993:993   -p 995:995    -p 80:80   -p 8080:8080   -v /c/dockerfile/ewomail/mysql/:/ewomail/mysql/data/   -v /c/dockerfile/ewomail/vmail/:/ewomail/mail/   -v /c/dockerfile/ewomail/ssl/certs/:/etc/ssl/certs/   -v /c/dockerfile/ewomail/ssl/private/:/etc/ssl/private/   -v /c/dockerfile/ewomail/rainloop:/ewomail/www/rainloop/data   -v /c/dockerfile/ewomail/ssl/dkim/:/ewomail/dkim/ -v /c/dockerfile/ewomail/etc/hosts:/etc/hosts  --name ewomail bestwu/ewomail
 ```
 
 ``` bash

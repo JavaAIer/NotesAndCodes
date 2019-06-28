@@ -20,6 +20,18 @@ public class MailService {
     @Autowired
     JavaMailSender javaMailSender;
 
+    /**
+     * 发送带图片资源的邮件
+     * 在发送邮件时分别传入图片资源路径 和资源Id,通过FileSystemResources构造静态资源.
+     * 然后通过调用addInline方法将资源加入邮件对象中.
+     * 注意,在调用MimeMessageHelper中的setText方法时,第二个参数true表示邮件正文是html格式的,该参数不传默认为false .
+     * @param from
+     * @param to
+     * @param subject
+     * @param content
+     * @param srcPath
+     * @param resIds
+     */
     public void sendMailWithImg(String from, String to,
                                 String subject, String content,
                                 String[] srcPath,String[] resIds) {
@@ -64,10 +76,19 @@ public class MailService {
         javaMailSender.send(simpMsg);
     }
 
+    /**
+     *  发送带附件的邮件
+     * @param from 发件人
+     * @param to 收件人
+     * @param subject 主题
+     * @param content 内容
+     * @param file 附件
+     */
     public void sendAttachFileMail(String from, String to,
                        String subject, String content, File file) {
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
+            //第二个参数表示这是一封带附件的邮件(multipart表示一个邮件有多个正文,多个附件以及内嵌资源,邮件的表现方式更加丰富)
             MimeMessageHelper helper = new MimeMessageHelper(message,true);
             helper.setFrom(from);
             helper.setTo(to);
