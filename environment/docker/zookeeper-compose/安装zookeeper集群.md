@@ -2,6 +2,18 @@
  # 编辑yml脚本  注意的是3.5版本的clientPort参数变了,我也没找到在哪配,所以就用3.4.11版本吧
  # docker pull zookeeper:3.4.11
  
+ mkdir /usr/local/docker_app
+ mkdir /usr/local/docker_app/zookeeper
+ mkdir /usr/local/docker_app/zookeeper/zoo1
+ mkdir /usr/local/docker_app/zookeeper/zoo1/data
+ mkdir /usr/local/docker_app/zookeeper/zoo1/datalog
+ mkdir /usr/local/docker_app/zookeeper/zoo2
+ mkdir /usr/local/docker_app/zookeeper/zoo2/data
+ mkdir /usr/local/docker_app/zookeeper/zoo2/datalog
+ mkdir /usr/local/docker_app/zookeeper/zoo3
+ mkdir /usr/local/docker_app/zookeeper/zoo3/data
+ mkdir /usr/local/docker_app/zookeeper/zoo3/datalog
+ chmod 777 /usr/local/docker_app
  
  # docker-compose命令: 查看
  docker-compose -f ./docker-compose.yml config --help
@@ -19,6 +31,15 @@
  docker exec -it zookeeper_1 /bin/sh
  cd bin
  zkServer.sh status
+```
+
+``` bash
+# 连接服务器
+./zkCli.sh -server localhost:2181
+create /test "hello world"
+get /test
+delete /test
+
 ```
 
 
